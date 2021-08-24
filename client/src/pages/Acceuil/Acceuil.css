@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+#accueil{
+    width:100%;
+    height:768px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('/src/components/images/imen.jpg');
+}
+
+
+.name{
+   
+	font-family: 'Montserrat';
+	width: 500px;
+	position: absolute;
+    left: 15%;
+	top: 50%;
+	transform: translate(-22%,-50%);
+}
+.name span{
+    color: #00b7ff;
+}
+
+.name h1{
+	font-family:'Montserrat';
+	font-size: 40px;
+	margin:0px;
+	letter-spacing: 2px;
+	color:#000000;
+}
+.header-btns{
+    display: flex;
+    margin-top: 40px;
+}
+.singin{
+	width:110px;
+	height: 40px;
+	display: flex;
+    margin-top: 10%;
+	justify-content: center;
+    align-items: center;
+    background-color: #00b7ff;
+    box-shadow: 5px 10px 30px rgba(2, 238, 255, 0.336);
+    border-radius: 10px;
+	color:#ffffff;
+    margin-right: 10%;
+}
+.singin:hover{
+	background-color: #0099ff;
+    transition: all ease 0.5s;
+    color: #ffffff;
+}
+.sign{
+  
+        display: flex;
+        align-content: center;
+    
+    
+}
+.singup{
+	width:110px; 
+    float: right;
+    margin-top: 10%;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+    align-items: center;
+    background-color: #00b7ff;
+    box-shadow: 5px 10px 30px rgba(2, 238, 255, 0.336);
+    border-radius: 10px;
+	color:#ffffff;
+}
+.singup:hover{
+	background-color: #0099ff;
+    transition: all ease 0.5s;
+    color: #ffffff;
+}
