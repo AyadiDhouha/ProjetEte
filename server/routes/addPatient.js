@@ -17,30 +17,91 @@ router.get('/allpatients',requireLogin,(req,res)=>{
 })
 
 
-router.post('/addPatient',requireLogin,(req,res)=>{
-    const{name,phone,status,doctor,age}=req.body
-    console.log(name,phone,status,doctor,age)
-    if(!name || !phone||!status||!doctor||!age){
-        res.status(422).json({error:"Please add all fields"})
-    }
-    req.user.password=undefined
-    //console.log(req.user)
-    //res.send("ok")
-    const post =new Patient({
+router.post('/addpatients',requireLogin, (req, res) => {
+    const { lastName, firstName, age, adresse, tel, etat, path, cardio, trouble, diabete,
+        hta,
+        insuff,
+        reti,
+        atcd,
+        grossesse,
+        immuno,
+         anc_path,
+        trait_path,
+        anc_cardio,
+        trait_cardio,
+        anc_trouble,
+        trait_trouble,
+        anc_diabete,
+        trait_diabete,
+        anc_hta,
+        trait_hta,
+        anc_insuff,
+        trait_insuff,
+        anc_reti,
+        trait_reti,
+        info_atcd,
+        info_grossesse,
+        anc_immuno,
+        trait_immuno,
+        tabagisme,
+        alcool,
+        drogue,
+        taille,
+        poids } = req.body
 
-     name,
-     phone,
-     status,
-     doctor,
-     age,
-     addedBy:req.user
+    const patient = new Patient({
+        lastName,
+        firstName,
+        age,
+        adresse,
+        tel,
+        etat,
+        path,
+        cardio,
+        trouble,
+        diabete,
+        hta,
+        insuff,
+        reti,
+        atcd,
+        grossesse,
+        immuno,
+        anc_path,
+        trait_path,
+        anc_cardio,
+        trait_cardio,
+        anc_trouble,
+        trait_trouble,
+        anc_diabete,
+        trait_diabete,
+        anc_hta,
+        trait_hta,
+        anc_insuff,
+        trait_insuff,
+        anc_reti,
+        trait_reti,
+        info_atcd,
+        info_grossesse,
+        anc_immuno,
+        trait_immuno,
+        tabagisme,
+        alcool,
+        drogue,
+        taille,
+        poids,
+        addedBy:req.user
+
+
     })
-    post.save().then(result=>{
-        res.json({post:result})
-    })
-    .catch(err=>{
-        console.log(err)
-    })
+
+    patient.save()
+        .then(patient => {
+            res.json({ message: "saved successfully" })
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
 })
 
 router.get('/myPatient',requireLogin,(req,res)=>{

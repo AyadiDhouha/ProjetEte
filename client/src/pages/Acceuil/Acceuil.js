@@ -8,7 +8,7 @@ const Acceuil = () => {
     let history = useHistory()
   return (
     
-    <div id='accueil'>
+    <div className='accueil'>
      
 
         <div className='name'>

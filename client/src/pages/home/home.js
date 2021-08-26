@@ -3,6 +3,7 @@ import { Fragment } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import About from '../../components/about/about'
 import Acceuil from '../Acceuil/Acceuil'
+import Footer from '../../components/Footer/Footer'
 const Home = () => {
     let [screen, setScreen] = useState()
     const [y, setY] = useState('')
@@ -64,6 +65,9 @@ const Home = () => {
         </div>
         <div id="apropos">
           <About/>
+        </div>
+        <div id="contact">
+        <Footer />
         </div>
         </Fragment>
 

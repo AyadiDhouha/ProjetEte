@@ -63,7 +63,7 @@ const Nav =()=>{
           </ul>
         </div>
         <div>
-        <button className="waves-effect waves-light btn " onClick={()=>{history.push('/addpatient')}}>Ajout malade</button>
+        <button className="waves-effect waves-light btn " onClick={()=>{history.push('/addpatients')}}>Ajout malade</button>
         <button className="waves-effect waves-light btn " >Chercher un cours </button>
 
         </div>

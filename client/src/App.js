@@ -4,6 +4,7 @@ import React,{useEffect,createContext,useReducer,useContext, useState} from 'rea
 import {BrowserRouter,Route,Switch,useHistory} from 'react-router-dom'
 import Nav from './components/Nav'
 import Home from './pages/home/home'
+import Nav2 from './components/Nav2/Nav2'
 import Navbar from './components/Navbar/Navbar'
 import Acceuil from './pages/Acceuil/Acceuil'
 import Courses from './pages/Courses/Courses'
@@ -12,7 +13,8 @@ import AddPatient from './pages/AddPatient/AddPatient';
 import Signin from './pages/Signin/Signin';
 import Signup from './pages/Signup/Signup';
 import AddCourse from './pages/AddCourse/AddCourse';
-import Search from './pages/Search'
+import FicheMalade from './pages/FicheMalade/FicheMalade'
+import Search from './components/search/search'
 import {reducer,initialState} from './reducers/userReducer'
 const loader = document.querySelector(".loader");
 const showLoader = () => loader.classList.remove("loader");
@@ -78,7 +80,7 @@ function App() {
     <Home/>
     </Route>
      <Route  path='/home'>
-    <Nav/>
+    <Nav2/>
     </Route> 
     <Route path='/courses'>
       <Courses/>
@@ -86,8 +88,8 @@ function App() {
     <Route path='/profile'>
       <Profile/>
     </Route>
-    <Route path='/addPatient'>
-      <AddPatient/>
+    <Route path='/addPatients'>
+      <FicheMalade/>
     </Route>
     <Route path='/signin'>
       <Signin/>

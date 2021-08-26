@@ -82,6 +82,15 @@ router.post('/signin',(req,res)=>{
         })
     })
 })
+router.get('/user',requireLogin,(req,res)=>{
+    User.find({email:req.user.email})
+    .then(user=>{
+        res.json({user})
+    })
+    .catch(err=>{
+        console.log(err)
+    })
+})
 
 
 module.exports=router

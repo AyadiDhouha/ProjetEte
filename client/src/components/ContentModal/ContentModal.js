@@ -3,16 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import axios from "axios";
-import {
-  img_500,
-  unavailable,
-  unavailableLandscape,
-} from "../../config/config";
+import identif from '../images/identif.png'
+
 import "./ContentModal.css";
-import { Button } from "@material-ui/core";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import Carousel from "../Carousel/Carousel";
+
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -32,11 +26,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TransitionsModal({ children, media_type, id }) {
+export default function TransitionsModal({ children , name , status }) {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
-  const [content, setContent] = useState();
-  const [video, setVideo] = useState();
+  const [content,setContent] = useState([]);
+
 
   const handleOpen = () => {
     setOpen(true);
@@ -46,23 +40,7 @@ export default function TransitionsModal({ children, media_type, id }) {
     setOpen(false);
   };
 
-  useEffect(()=>{
-    fetch('/myPatient',{
-        headers:{
-            "Authorization":"Bearer "+localStorage.getItem("jwt")
-        }
-    }).then(res=>res.json())
-    .then (result=>{
-        console.log(result)
-       setContent(result.mypatient)
-        
-    })
-    // eslint-disable-next-line
-  
-},[])
 
- 
-  
   return (
     <>
       <div
@@ -91,43 +69,23 @@ export default function TransitionsModal({ children, media_type, id }) {
               <div className="ContentModal">
                 <img
                   src={
-                    content.poster_path
-                      ? `${img_500}/${content.poster_path}`
-                      : unavailable
+                    identif
                   }
-                  alt={content.name || content.title}
                   className="ContentModal__portrait"
                 />
-                <img
-                  src={
-                    content.backdrop_path
-                      ? `${img_500}/${content.backdrop_path}`
-                      : unavailableLandscape
-                  }
-                  alt={content.name || content.title}
-                  className="ContentModal__landscape"
-                />
+                
                 <div className="ContentModal__about">
                   <span className="ContentModal__title">
-                    {content.name || content.title} (
-                    {(
-                      content.first_air_date ||
-                      content.release_date ||
-                      "-----"
-                    ).substring(0, 4)}
-                    )
+                    {name }
+                    
                   </span>
-                  {content.tagline && (
-                    <i className="tagline">{content.tagline}</i>
-                  )}
+                  
 
                   <span className="ContentModal__description">
-                    {content.overview}
+                    {status}
                   </span>
 
-                  <div>
-                    <Carousel id={id} media_type={media_type} />
-                  </div>
+                  
 
                 
                 </div>
