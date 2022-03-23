@@ -1,0 +1,35 @@
+.singleCourse{
+    margin:50px 50px 50px 50px ;
+}
+.singleCourseWrapper {
+    padding: 100px;
+    padding-right: 0;
+  }
+  
+  .singleCourseImg {
+    width: 500px;
+    height: 500px;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+  }
+  
+  .singleCourseTitle {
+    text-align: center;
+    margin: 10px;
+    font-size: 28px;
+    font-family: "Lora", sans-serif;
+  }
+  
+  .singleCourseDesc {
+    color: #666;
+    font-size: 19px;
+    line-height: 25px;
+  }
+  
+  .singleCourseDesc::first-letter {
+    margin-left: 20px;
+    font-size: 40px;
+    font-weight: 600;
+  }

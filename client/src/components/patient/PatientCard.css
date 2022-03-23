@@ -1,0 +1,32 @@
+.card_patient{
+    width: 250px;
+    margin: 0px 25px 40px 25px;
+    display: flex;
+    flex-direction: column;
+  }
+  .patientimg{
+    width: 250px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 7px;
+  }
+  .PatientName {
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    margin-top: 5px;
+    cursor: pointer;
+    color: rgb(0,0,0,0.7);
+ }
+ .patientLastName{
+    font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+    font-size: 21px;
+    font-weight: 900;
+    margin-top: 5px;
+    cursor: pointer;
+    color: rgb(0,0,0,0.7);
+    margin-left: 10px; 
+ }
+ .ident{
+     display: flex;
+ }

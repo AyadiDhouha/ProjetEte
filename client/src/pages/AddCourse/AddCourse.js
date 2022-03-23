@@ -4,21 +4,24 @@ import M from 'materialize-css'
 const AddCourse =()=>{
     const history=useHistory()
     const [title,setTitle]=useState("")
-    const[desc,setDesc]=useState("")
-    const[genre,setGenre]=useState("")
+    const[body,setBody]=useState("")
+    const[categories,setCategories]=useState("")
+    const [photo,setPhoto]=useState("")
+
     
     
     const postDetails=()=>{
-        fetch("/addCourse",{
+        fetch("/courses",{
             method:"post",
             headers:{
                 "Content-Type":"application/json",
-                "Authorization":"Bearer "+localStorage.getItem("jwt")
+                "Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFmOWJjNjRlMzkyZjIwMTA0YmY5MTEiLCJpYXQiOjE2Mjk0NjkyMTZ9.5GFLKQXNiznhlDCbTrj53P_qXLBEoFOnDWzPRmvHwHc"
             },
             body:JSON.stringify({ 
                 title,
-                desc,
-                genre
+                body,
+                categories,
+                photo
             })
         }).then(res=>res.json())
         .then(data=>{
@@ -52,14 +55,21 @@ const AddCourse =()=>{
             />
             <input
             type="text"
-            placeholder="Desc"
-            value={desc}
-            onChange={(e)=>setDesc(e.target.value)}/>
+            placeholder="body"
+            value={body}
+            onChange={(e)=>setBody(e.target.value)}
+            style={{height:"400px",
+            width:"800px"}}/>
             <input
             type="text"
-            placeholder="Genre"
-            value={genre}
-            onChange={(e)=>setGenre(e.target.value)}/>
+            placeholder="categories"
+            value={categories}
+            onChange={(e)=>setCategories(e.target.value)}/>
+                <input
+            type="text"
+            placeholder="photo"
+            value={photo}
+            onChange={(e)=>setPhoto(e.target.value)}/>
             
 
              <button className="btn waves-effect waves-light #aed581 light-green lighten-2" onClick={()=>postDetails()}>

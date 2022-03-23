@@ -1,15 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
-import Grid from '@material-ui/core/Grid';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-
 import TextField from '@material-ui/core/TextField';
-
-import SearchIcon from '@material-ui/icons/Search';
-
-
-
 ;
 
 const useStyles = makeStyles((theme) => ({
@@ -74,10 +66,10 @@ const fetchPatients=(query)=>{
 <Autocomplete
         id="free-solo-demo"
         freeSolo
-        options={patientDetails.map((option) => option.name)}
+        options={patientDetails.map((option) => option.lastName)}
         renderInput={(params) => (
            
-            <TextField {...params} label="search Patients" margin="normal" variant="outlined" onChange={(e)=>fetchPatients(e.target.value)} />
+            <TextField {...params} label="search Patients" margin="normal" variant="outlined" onChange={(e)=>fetchPatients(e.target.value)}  />
             
           
         )}

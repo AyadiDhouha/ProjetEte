@@ -85,15 +85,10 @@ const Signup =()=>{
 
             <div className="input-field1">
             <i className="fas fa-user-md"></i>
-              <select name="specialite" id="specialite"   onChange={(e)=>setSpeciality(e.target.value)}>
-                <option >--Specialité--</option>
-                <option  value="cardio">Cardiology</option>
-                <option value="generaliste" >General Medicine</option>
-                <option  value="gastro">Gastroenteric Surgery</option>
-                <option value="hepato" >Hepatology</option>
-                <option value="infectieux" >Infectious Disease</option>
-                <option value="neuro" >Neurology</option>
-              </select>
+            <input type="text"
+               placeholder="Specialité"
+               value={speciality}
+            onChange={(e)=>setSpeciality(e.target.value)} />
             </div>
 
             <div className="input-field1">

@@ -116,7 +116,7 @@ router.get('/myPatient',requireLogin,(req,res)=>{
 })
 router.post('/search-patients',(req,res)=>{
     let patientPattern=new RegExp("^"+req.body.query)
-    Patient.find({name:{$regex:patientPattern}})
+    Patient.find({lastName:{$regex:patientPattern}})
     .then(patient=>{
         res.json({patient})
     }).catch(err=>{
